@@ -39,10 +39,22 @@ The project follows these key steps:
    - Creating visualizations to illustrate model performance differences
 
 ## Key Findings
-- [To be filled with your project's actual findings]
-- Comparison of model accuracies, advantages, and limitations
-- Most important features for predicting term deposit subscriptions
-- Recommendations for optimizing future marketing campaigns
+- The Logistic Regression model performed best, with 5.7X potential lift on the first 10% decile.
+- Comparison table
+
+| Model | Train Time (ms) | Train Accuracy | Test Accuracy |
+|-------|----------------|----------------|---------------|
+| DummyClassifier | 52.40 | 0.887 | 0.887 |
+| LogisticRegression | 1200.00 | 0.914 | 0.916 |
+| KNN | 71.80 | 0.547 | 0.331 |
+| dtree (no max) | 716.00 | 1.000 | 0.890 |
+| dtree (5 nodes) | 314.00 | 0.920 | 0.910 |
+| svc | 13400.00 | 0.917 | 0.911 |
+| KNN_2 | 41300.00 | 0.420 | 0.410 |
+| dtree_grid | 23200.00 | 0.900 | 0.910 |
+| svc_grid | 134000.00 | 0.910 | 0.910 |
+
+- ROC, confusion matrix and lift visualizations were also performed on the best model
 
 ## Technical Implementation
 - Python 3.x with standard data science libraries (pandas, numpy, scikit-learn, matplotlib, seaborn)
