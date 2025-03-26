@@ -5,13 +5,13 @@ import numpy as np
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error, confusion_matrix, roc_curve, auc, classification_report
 import requests
 import json
 import os
 from dotenv import load_dotenv
 
-def plot_dataframe_missing_values(dataframe, filepath, custom_na_values=None):
+def plot_dataframe_missing_values(dataframe, filepath, custom_na_values=None, custom_title='Missing Value Proportion per Column'):
     """
     Create and save a bar plot showing the proportion of missing values in each column.
     Handles both explicit NaN values and custom missing value indicators.
@@ -53,7 +53,7 @@ def plot_dataframe_missing_values(dataframe, filepath, custom_na_values=None):
     # Customize the plot
     plt.xlabel('Columns')
     plt.ylabel('Proportion of Missing Values')
-    plt.title('Missing Value Proportion per Column')
+    plt.title(custom_title)
     plt.xticks(rotation=45, ha='right')
     plt.tight_layout()
     
